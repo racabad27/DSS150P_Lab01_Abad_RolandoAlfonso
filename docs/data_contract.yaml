@@ -1,0 +1,2 @@
+Source chosen: customers.csv
+Explanation: I chose this as a source because it contains data that is already structured and can be easily read into a dataframe, by avoiding complexity issues like nesting. 
