@@ -31,12 +31,22 @@ def main():
             for row in cur.fetchall():
                 print(row)
 
-            print("\n=== Row count ===")
+            print("\n=== Row count (support_tickets) ===")
             cur.execute("SELECT COUNT(*) FROM support_tickets;")
             print(cur.fetchone())
 
-            print("\n=== Sample rows ===")
+            print("\n=== Sample rows (support_tickets) ===")
             cur.execute("SELECT * FROM support_tickets LIMIT 5;")
+            for row in cur.fetchall():
+                print(row)
+
+            print("\n=== Columns in lab.customers ===")
+            cur.execute("""
+                SELECT column_name, data_type, is_nullable
+                FROM information_schema.columns
+                WHERE table_schema = 'lab' AND table_name = 'customers'
+                ORDER BY ordinal_position;
+            """)
             for row in cur.fetchall():
                 print(row)
 
