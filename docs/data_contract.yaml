@@ -1,2 +1,53 @@
 Source chosen: customers.csv
-Explanation: I chose this as a source because it contains data that is already structured and can be easily read into a dataframe, by avoiding complexity issues like nesting. 
+Explanation: I chose this as a source because it contains data that is already structured and can be easily read into a dataframe, by avoiding complexity issues like nesting.
+
+dataset_name: customers.csv
+version: 1.0
+owner: "unknown - requires confirmation"
+source_type: file
+source_format: csv
+acquisition_method: Sourced from a DB
+expected_update_pattern: batch
+primary_key: customer_id 
+
+schema:
+  - name: customer_id 
+    type: integer
+    nullable: false
+    description: Primary key for the customers
+  - name: first_name
+    type: text
+    nullable: false
+    description: First name of the customer
+  - name: last_name
+    type: text
+    nullable: false
+    description: Last name of the customer
+  - name: email
+    type: text
+    nullable: true
+    description: Email address of the customer
+  - name: city
+    type: text  
+    nullable: true
+    description: City where the customer resides
+  - name: signup_date
+    type: date
+    nullable: true
+    description: Date when the customer signed up
+  - name: customer_segment
+    type: text
+    nullable: true
+    description: Segment of the customer.
+quality_rules:
+  - customer_id must be unique
+  - customer_id must not be null
+  - first_name must not be null
+  - last_name must not be null
+  - email must be a valid email format
+
+freshness_expectation: "unknown - requires confirmation"
+duplicate_policy: reject
+schema_evolution_policy: Allow new columns, but do not allow changes to existing columns.
+consumer: For data analysts performing comprehensive analysis of customer data, including segmentation and behavior analysis.
+notes: parsing the signup_date field as a date type, and ensuring that the email field is in a valid email format.  
