@@ -1,0 +1,5 @@
+| File | Observation 1 | Observation 2 |
+|---|---|---|
+|customers.csv| customer_id can serve as a good primary key to ensure consistency as references within the future pipelines| Coercing was necessary for the pipeline because it safely puts a handling mechanism for instances where the values may fail, instead replacing it with a NaT as a note that it was unable to perform what it needed with that value.
+|orders.json| similar to the customers.csv, there was prescence of parsing because there is a nested structure within it. The data here is read differently, which is why this workaround was devised. | Order_id is a more suitable primary key here since it holds a dictation of each row that indicates which customer it belongs to, and it is arranged in order.|
+|products.parquet|product_id is the best choice for a primary key because it is unique and is arranged in order as well.| Prices seem to be quite |  
