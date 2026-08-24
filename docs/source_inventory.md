@@ -1,0 +1,5 @@
+| Source Name | Source-system type | Data format | Structured / Semi-structured / unstructured | Expected update pattern | Likely acquisition method |Schema location or schema owner | Possible primary/business key | Potential schema-evolution risk | Potential data-quality risk
+|---|---|---|---|---|---|---|---|---|---|
+|customers.csv| Plain CSV file | CSV | Structured | By Batch | From cloning the original repository of owner | No schema given | customer_id | adding new columns or changing existing ones | Inconsistencies in structure and formatting |
+|orders.json| Plain JSON file | JSON | Semi-structured | By batch | From starter repository provided | No schema given | order_id | changing values can affect the  structure of the data | formatting one nest incorrectly can mess with the others | 
+|products.parquet| Plain parquet file | parquet | Structured | By batch | From starter repository provided | No schema given | product_id | Sudden addition/change of values within the columns or themselves | Inconsistent formats |
