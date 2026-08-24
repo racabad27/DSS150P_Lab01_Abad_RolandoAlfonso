@@ -3,3 +3,5 @@
 |customers.csv| Plain CSV file | CSV | Structured | By Batch | From cloning the original repository of owner | No schema given | customer_id | adding new columns or changing existing ones | Inconsistencies in structure and formatting |
 |orders.json| Plain JSON file | JSON | Semi-structured | By batch | From starter repository provided | No schema given | order_id | changing values can affect the  structure of the data | formatting one nest incorrectly can mess with the others | 
 |products.parquet| Plain parquet file | parquet | Structured | By batch | From starter repository provided | No schema given | product_id | Sudden addition/change of values within the columns or themselves | Inconsistent formats |
+|REST API| Provided API key | API | Structured | Constant/Continous for every new entry | From starter repository | No schema given | id | User-id repeating could trigger misidentification | duplicate user-ids
+|POSTGRE SQL| DB | SQL | Structured | Consistent updating | Through direct SQL connection | Schema-defined in CREATE TABLE | ticket_id | Live-service could indicate problems with sudden changes | Inconsistencies with status and resolved_at |
